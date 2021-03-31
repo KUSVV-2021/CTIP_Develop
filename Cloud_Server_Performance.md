@@ -37,8 +37,18 @@
 
 ### Performance
 
-#### AWS
+| 테스트 항목                    | AWS           | Azure         | GCP           | NCP           |
+| ------------------------------ | ------------- | ------------- | ------------- | ------------- |
+| **CPU**                        |
+| SHA256-hashing 500 MB          | 3.282 seconds | 3.527 seconds | 3.259 seconds | 3.613 seconds |
+| bzip2-compressing 500 MB       | 5.570 seconds | 5.900 seconds | 5.633 seconds | 5.816 seconds |
+| AES-encrypting 500 MB          | 1.663 seconds | 1.759 seconds | 1.280 seconds | 1.998 seconds |
+| **dd: sequential write speed** |
+| 1st run                        | 64.66 MiB/s   | 17.07 MiB/s   | 35.76 MiB/s   | 4.01 MiB/s    |
+| 2nd run                        | 61.32 MiB/s   | 17.07 MiB/s   | 35.86 MiB/s   | 3.62 MiB/s    |
+| 3rd run                        | 61.13 MiB/s   | 17.07 MiB/s   | 35.86 MiB/s   | 3.72 MiB/s    |
+| average                        | 62.37 MiB/s   | 17.07 MiB/s   | 35.83 MiB/s   | 3.78 MiB/s    |
 
 참고
 
-- https://www.youtube.com/watch?v=SBjlxdWBU0Y
+- https://blog.51sec.org/2019/03/free-tier-vps-bench-comparison-for-aws.html
