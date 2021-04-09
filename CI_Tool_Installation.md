@@ -10,6 +10,8 @@ _해당 글은 Local 에서 도커를 활용해 환경을 구축하는 것을 �
 2. [Java 설치방법](#Java-설치방법)
 3. [Gradle 설치방법](#Gradle-설치방법)
 4. [Jenkins 설치방법](#Jenkins-설치방법)
+5. [Jenkins에 Gradle 연동방법](#Jenkins에-Gradle-연동방법)
+6. [Jenkins에 Git 연동방법](#Jenkins에-Git-연동방법)
 
 <br />
 
@@ -59,7 +61,7 @@ _해당 글은 Local 에서 도커를 활용해 환경을 구축하는 것을 �
 
 ## Jenkins 설치방법
 
-1. `apt-get install gnupg` 명령어로 사전 작업을 해줍니다.
+1. `apt-get install gnupg git` 명령어로 사전 작업을 해줍니다.
 2. `wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | apt-key add -` 명령어를 통해 apt-key에 추가해줍니다.
    - 해당 명령어를 입력했을 때, OK가 출력되면 진행할 수 있습니다.
 3. `echo deb http://pkg.jenkins.io/debian-stable binary/ | tee /etc/apt/sources.list.d/jenkins.list` 를 통해 source list에도 추가해줍니다.
@@ -72,4 +74,22 @@ _해당 글은 Local 에서 도커를 활용해 환경을 구축하는 것을 �
 
 <br />
 
-## Jenkins Github 연동하기
+## Jenkins에 Gradle 연동방법
+
+1. Jenkins 관리 접속
+2. Global Tool Configuration 접속
+3. Add Gradle 버튼 클릭
+4. Install automatically 클릭 해제 및 내용 추가
+   - name: `Gradle 6.8`
+   - GRADLE_HOME: `/opt/gradle/gradle-6.8`
+5. Save 버튼 클릭
+
+## Jenkins에 Git 연동방법
+
+1. 새로운 Item 접속
+2. 프로젝트 이름을 입력한 뒤, Freestyle project를 클릭하고 진행합니다.
+3. 소스 코드 관리 -> Git 클릭 -> Github에서 해당되는 Url를 입력하고, Branch Specifier는 main을 입력합니다.
+4. Build -> Invoke Gradle script -> Ivoke Gradle `Gradle 6.8` 를 입력합니다.
+5. Tasks에 `build`를 입력한 뒤, 저장합니다.
+6. 고급 버튼을 누른 뒤, 가장 밑에 있는 `Force GRADLE_USER_HOME to use workspace`를 체크해줍니다.
+7. 왼편의 Build Now 버튼을 눌러 작동을 확인합니다.
