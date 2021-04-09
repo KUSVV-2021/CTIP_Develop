@@ -4,9 +4,16 @@
 
 _해당 글은 Local 에서 도커를 활용해 환경을 구축하는 것을 목적으로 합니다._
 
+### 목차
+
+1. [Docker에 Ubuntu 설치방법](#Docker에-Ubuntu-설치방법)
+2. [Java 설치방법](#Java-설치방법)
+3. [Gradle 설치방법](#Gradle-설치방법)
+4. [Jenkins 설치방법](#Jenkins-설치방법)
+
 <br />
 
-## Docker에 Ubuntu 설치하는 방법
+## Docker에 Ubuntu 설치방법
 
 1. [설치 링크](https://www.docker.com/get-started)를 통해 도커를 설치합니다.
    - 이 때, Docker Desktop 버전으로 설치합니다.
@@ -27,7 +34,7 @@ _해당 글은 Local 에서 도커를 활용해 환경을 구축하는 것을 �
 
 <br />
 
-## Java 설치
+## Java 설치방법
 
 1. `apt-get install` 명령어를 통해 패키지들을 업데이트 해줍니다.
 2. `apt-get install openjdk-11-jdk` 명령어를 통해 OpenJDK 11버전을 설치해줍니다.
@@ -35,7 +42,7 @@ _해당 글은 Local 에서 도커를 활용해 환경을 구축하는 것을 �
 
 <br />
 
-## Gradle 설치
+## Gradle 설치방법
 
 1. `apt-get install wget unzip vim` 명령어를 통해 사전 작업을 해줍니다.
 2. `wget https://services.gradle.org/distributions/gradle-6.8-bin.zip -P /tmp` 를 실행시켜 Gradle 6.8 Zip 파일을 가져옵니다.
@@ -51,3 +58,18 @@ _해당 글은 Local 에서 도커를 활용해 환경을 구축하는 것을 �
 <br />
 
 ## Jenkins 설치방법
+
+1. `apt-get install gnupg` 명령어로 사전 작업을 해줍니다.
+2. `wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | apt-key add -` 명령어를 통해 apt-key에 추가해줍니다.
+   - 해당 명령어를 입력했을 때, OK가 출력되면 진행할 수 있습니다.
+3. `echo deb http://pkg.jenkins.io/debian-stable binary/ | tee /etc/apt/sources.list.d/jenkins.list` 를 통해 source list에도 추가해줍니다.
+4. `apt-get update`를 통해 jenkins를 apt list에 추가해줍니다.
+5. `apt-get install jenkins` 명령어를 실행하여 jenkins를 실행시켜 줍니다.
+6. jenkins의 실행을 위해 `/etc/init.d/jenkins start`를 실행합니다.
+7. http://127.0.0.1:8080 으로 접속했을시, jenkins 가 설치되면 됩니다.
+8. `vim /var/lib/jenkins/secrets/initialAdminPassword` 명령어를 통해 해당 파일의 비밀번호를 복사한 뒤, jenkins에 입력해줍니다.
+9. `Install suggested plugins` 를 클릭하여 기본 Plugin 을 설치해줍니다.
+
+<br />
+
+## Jenkins Github 연동하기
