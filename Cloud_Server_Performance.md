@@ -1,5 +1,7 @@
 ## 클라우드 서버 FreeTier 성능 측정
 
+> 작성자: 전도현(IMRaccoon)
+
 ### 환경
 
 - Ubuntu 18.04
