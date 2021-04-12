@@ -39,8 +39,9 @@ _해당 글은 Local 에서 도커를 활용해 환경을 구축하는 것을 �
 ## Java 설치방법
 
 1. `apt-get install` 명령어를 통해 패키지들을 업데이트 해줍니다.
-2. `apt-get install openjdk-11-jdk` 명령어를 통해 OpenJDK 11버전을 설치해줍니다.
-3. 설치 완료 후, `java --version` 를 실행하였을 때 OpenJDK 11.0.10 버전이 나오면 됩니다.
+2. `apt-get update` 명령어를 통해 업데이트 해줍니다.
+3. `apt-get install openjdk-11-jdk` 명령어를 통해 OpenJDK 11버전을 설치해줍니다.
+4. 설치 완료 후, `java --version` 를 실행하였을 때 OpenJDK 11.0.10 버전이 나오면 됩니다.
 
 <br />
 
