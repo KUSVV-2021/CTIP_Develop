@@ -85,6 +85,8 @@ _해당 글은 Local 에서 도커를 활용해 환경을 구축하는 것을 �
    - GRADLE_HOME: `/opt/gradle/gradle-6.8`
 5. Save 버튼 클릭
 
+<br />
+
 ## Jenkins에 Git 연동방법
 
 1. 새로운 Item 접속
