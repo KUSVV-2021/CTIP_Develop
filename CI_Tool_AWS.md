@@ -48,7 +48,7 @@ _해당 글은 AWS EC2 에서 Ubuntu18.04 환경에서 구축하는 것을 목�
 6. jenkins의 실행을 위해 `sudo systemctl enable jenkins`를 실행합니다. 해당 인스턴스를 재시작해도 자동으로 재실행됩니다.
 7. http://[본인의 EC2 Public IP]:8080 으로 접속했을시, jenkins 가 설치되면 됩니다.
 8. `sudo vim /var/lib/jenkins/secrets/initialAdminPassword` 명령어를 통해 해당 파일의 비밀번호를 복사한 뒤, jenkins에 입력해줍니다.
-9. `Select plugins to install` 를 클릭하여 선택하여 Plugin 을 설치해줍니다.
+9. `Install suggested plugins` 를 클릭하여 기본 Plugin 을 설치해줍니다.
 
 <br />
 
