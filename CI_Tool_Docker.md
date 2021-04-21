@@ -49,7 +49,7 @@ _해당 글은 Local 에서 도커를 활용해 환경을 구축하는 것을 �
 
 1. `apt-get install wget unzip vim` 명령어를 통해 사전 작업을 해줍니다.
 2. `wget https://services.gradle.org/distributions/gradle-6.8-bin.zip -P /tmp` 를 실행시켜 Gradle 6.8 Zip 파일을 가져옵니다.
-3. `unzip -d /opt/gradle /tmp/gradle-*.zip` 작업을 통해 /tmp 디렉토리에 저장되어 있던 zip파일을 /pot/gradle 폴더로 압축해제 합니다.
+3. `unzip -d /opt/gradle /tmp/gradle-*.zip` 작업을 통해 /tmp 디렉토리에 저장되어 있던 zip파일을 /opt/gradle 폴더로 압축해제 합니다.
 4. `vi /etc/profile.d/gradle.sh`를 입력한 후 다음과 같이 입력한 후 저장합니다.
    ```bash
    export GRADLE_HOME=/opt/gradle/gradle-6.8
